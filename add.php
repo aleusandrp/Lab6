@@ -8,27 +8,27 @@
 	<form action="add.php" method="POST">
 	<fieldset>
 	<legend>Добавление</legend>
-		<p>givenName<input type="text" required pattern="[a-zA-Z]{1,}" name="givenName"/></p>
-		<p>middleinitial<input type="text" required pattern="[A-Z]{1}" autofocus name="middleinitial"/></p>
-		<p>surname<input type="text" required pattern="[a-zA-Z]{1,}" name="surname"/></p>
+		GivenName<br><input type="text" required pattern="[a-zA-Z]{1,}" name="givenName"/><br>
+		MiddleInitial<br><input type="text" required pattern="[A-Z]{1}" autofocus name="middleinitial"/><br>
+		Surname<br><input type="text" required pattern="[a-zA-Z]{1,}" name="surname"/><br>
 		<fieldset>
-		<legend>gender</legend>
-		<p>male<input type="radio" required name="gender" value="1"/></p>
-		<p>female<input type="radio" required name="gender" value="0"/></p>
+		<legend>Gender</legend>
+		Male<br><input type="radio" required name="gender" value="1"/><br>
+		Female<br><input type="radio" required name="gender" value="0"/><br>
 		</fieldset>
-		<p>city<input type="text" required pattern="[a-zA-Z]{1,}" name="city"/></p>
-		<p>state<input type="text" required pattern="[A-Z]{2}" name="state"/></p>
-		<p>emailAddress<input type="email" required name="emailAddress"/></p>
-		<p>telephone<input type="tel" required pattern="[0-9]{1,}-[0-9]{1,}-[0-9]{1,}" name="telephone"/></p>
-		<p>birthday<input type="date" required name="birthday"/></p>
-		<p>occupation<input type="text" required pattern="[a-zA-Z]{1,}" name="occupation"/></p>
-		<p>company<input type="text" required pattern="[a-zA-Z]{1,}" name="company"/></p>
-		<p>weight<input type="text" required pattern="[0-9]{1,}" name="weight"/></p>
-		<p>length<input type="text" required pattern="[0-9]{1,}" name="length"/></p>
-		<p>streetAddress<input type="text" required name="streetAddress"/></p>
-		<p>zipCode<input type="text" required pattern="[0-9]{5}" name="zipCode"/></p>
-		<p>country<input type="text" required pattern="[A-Z]{2}" name="country"/></p>
-		<p><input type="submit" value="Добавить" /></p>
+		City<br><input type="text" required pattern="[a-zA-Z]{1,}" name="city"/><br>
+		State<br><input type="text" required pattern="[A-Z]{2}" name="state"/><br>
+		EmailAddress<br><input type="email" required name="emailAddress"/><br>
+		Telephone<br><input type="tel" required pattern="[0-9]{1,}-[0-9]{1,}-[0-9]{1,}" name="telephone"/><br>
+		Birthday<br><input type="date" required name="birthday"/><br>
+		Occupation<br><input type="text" required pattern="[a-zA-Z]{1,}" name="occupation"/><br>
+		Company<br><input type="text" required pattern="[a-zA-Z]{1,}" name="company"/><br>
+		Weight<br><input type="text" required pattern="[0-9]{1,}" name="weight"/><br>
+		Length<br><input type="text" required pattern="[0-9]{1,}" name="length"/><br>
+		StreetAddress<br><input type="text" required name="streetAddress"/><br>
+		ZipCode<br><input type="text" required pattern="[0-9]{5}" name="zipCode"/><br>
+		Country<br><input type="text" required pattern="[A-Z]{2}" name="country"/><br>
+		<input type="submit" value="Добавить" /><br>
 	</fieldset>
 	</form>
 </body>

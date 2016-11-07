@@ -7,7 +7,7 @@
 	<script src="cu.js"></script>
 </head>
 <body>
-	<form action="add.php">
+	<form action="add.php" method="POST">
 	     <input type="submit" value="Добавить" />
 	</form>
 	<?php 
@@ -31,14 +31,17 @@
 		echo "</tr>";
 		# выводим результат 
 		while($row = $stat->fetch()) { 
-		echo "<tr class="."hide".">";
+		echo "<tr>";
 			echo "<td>".$row->number."</td>";
 			echo "<td>".$row->givenName.' '.$row->middleInitial.' '.$row->surname."</td>";
 			echo "<td>".$row->city.' '.$row->state."</td>";
 			echo "<td>".$row->birthday."</td>";
 			echo "<td>".$row->telephone."</td>";
 			?>
-			<td><a class="edit" data-id=<?php echo "'".$row->number."'" ?> href="#">Edit</a> <a class="del" data-id=<?php echo "'".$row->number."'" ?> href="#">Del</a></td>
+			<td>
+			<a class="edit" data-id=<?php echo "'".$row->number."'" ?> href="#">Edit</a> 
+			<a class="del" data-id=<?php echo "'".$row->number."'" ?> href="#">Del</a>
+			</td>
 			<?php
 		echo "</tr>";
 		}
