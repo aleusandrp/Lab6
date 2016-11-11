@@ -9,7 +9,7 @@ $(document).ready(function(){
 			data: {param1: id},
 			success: function(responce){
 				alert("Удалена запись с id " + id);
-        }
+        	}
 		});
     });
     $(".edit").click(function(){

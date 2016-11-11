@@ -8,7 +8,6 @@
 <?php 
 if (isset($_GET['id'])) {
 	
-
 	$id = $_GET['id'];
 	$dbh = new PDO('mysql:host=localhost;dbname=laba6', "root", "");
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,33 +16,30 @@ if (isset($_GET['id'])) {
 	$stat->execute(array(
 		':d1'=>$id
 	));
-
-
 	$stat->setFetchMode(PDO::FETCH_OBJ); 
-
 		while($row = $stat->fetch()){
 ?>
 <form action="edit.php" method="POST">
 	<fieldset>
 	<legend>Добавление</legend>
 		Number<br><input type="text" value=<?php echo "'".$row->number."'"; ?> name="number"/><br>
-		GivenName<br><input type="text" value=<?php echo "'".$row->givenName."'"; ?> required autofocus pattern="[a-zA-Z]{1,}" name="givenName"/><br>
+		GivenName<br><input type="text" value=<?php echo "'".$row->givenName."'"; ?> required autofocus name="givenName"/><br>
 		MiddleInitial<br><input type="text" value=<?php echo "'".$row->middleInitial."'"; ?> required pattern="[A-Z]{1}" name="middleinitial"/><br>
-		Surname<br><input type="text" value=<?php echo "'".$row->surname."'"; ?> required pattern="[a-zA-Z]{1,}" name="surname"/><br>
+		Surname<br><input type="text" value=<?php echo "'".$row->surname."'"; ?> required name="surname"/><br>
 		<fieldset>
 		<legend>Gender</legend>
 		Male<br><input type="radio" <?php if($row->gender==1)echo "checked"; ?> value="1" required name="gender"/><br>
 		Female<br><input type="radio" <?php if($row->gender==0)echo "checked"; ?> value="0" required name="gender"/><br>
 		</fieldset>
-		City<br><input type="text" value=<?php echo "'".$row->city."'"; ?> required pattern="[a-zA-Z]{1,}" name="city"/><br>
+		City<br><input type="text" value=<?php echo "'".$row->city."'"; ?> required name="city"/><br>
 		State<br><input type="text" value=<?php echo "'".$row->state."'"; ?> required pattern="[A-Z]{2}" name="state"/><br>
 		EmailAddress<br><input type="email" value=<?php echo "'".$row->emailAddress."'"; ?> required name="emailAddress"/><br>
 		Telephone<br><input type="tel" value=<?php echo "'".$row->telephone."'"; ?> required pattern="[0-9]{1,}-[0-9]{1,}-[0-9]{1,}" name="telephone"/><br>
 		Birthday<br><input type="date" value=<?php echo "'".$row->birthday."'"; ?> required name="birthday"/><br>
-		Occupation<br><input type="text" value=<?php echo "'".$row->occupation."'"; ?> required pattern="[a-zA-Z]{1,}" name="occupation"/><br>
-		Company<br><input type="text" value=<?php echo "'".$row->company."'"; ?> required pattern="[a-zA-Z]{1,}" name="company"/><br>
-		Weight<br><input type="text" value=<?php echo "'".$row->weight."'"; ?> required pattern="[0-9]{1,}" name="weight"/><br>
-		Length<br><input type="text" value=<?php echo "'".$row->length."'"; ?> required pattern="[0-9]{1,}" name="length"/><br>
+		Occupation<br><input type="text" value=<?php echo "'".$row->occupation."'"; ?> required name="occupation"/><br>
+		Company<br><input type="text" value=<?php echo "'".$row->company."'"; ?> required name="company"/><br>
+		Weight<br><input type="text" value=<?php echo "'".$row->weight."'"; ?> required name="weight"/><br>
+		Length<br><input type="text" value=<?php echo "'".$row->length."'"; ?> required name="length"/><br>
 		StreetAddress<br><input type="text" value=<?php echo "'".$row->streetAddress."'"; ?> required name="streetAddress"/><br>
 		ZipCode<br><input type="text" value=<?php echo "'".$row->zipCode."'"; ?> required pattern="[0-9]{5}" name="zipCode"/><br>
 		Country<br><input type="text" value=<?php echo "'".$row->country."'"; ?> required pattern="[A-Z]{2}" name="country"/><br>
@@ -61,7 +57,6 @@ $dbh = null;
 if(isset($_POST['number'])){
 	$dbh = new PDO('mysql:host=localhost;dbname=laba6', "root", "");
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 	$givenName = $_POST['givenName'];
 	$middleinitial = $_POST['middleinitial'];
 	$surname = $_POST['surname'];
@@ -78,7 +73,6 @@ if(isset($_POST['number'])){
 	$streetAddress = $_POST['streetAddress'];
 	$zipCode = $_POST['zipCode'];
 	$country = $_POST['country'];
-
 	$sql = "UPDATE users SET 
 	givenName =:d2,
 	middleInitial =:d3,
@@ -96,7 +90,6 @@ if(isset($_POST['number'])){
 	streetAddress = :d15,
 	zipCode = :d16,
 	country = :d17 
-
 	WHERE number = :d1"; 
 	$q = $dbh->prepare($sql); 
 	$q->execute(array(
